@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>News API</title>
+</head>
+<body>
+	<h1 class="jumbotron bg-primary text-light text-center display-3">News API</h1>
+
+	<div class="container d-flex mb-3">
+		<select class="custom-select mr-3" id="country">
+			<option value="0" selected>Choose a country</option>
+			<option value="nz">New Zealand</option>
+			<option value="us">USA</option>
+			<option value="au">Australia</option>
+			<option value="in">India</option>
+			<option value="gb">UK</option>
+			<option value="ie">Ireland</option>
+			<option value="fr">France</option>
+		</select>
+
+		<select class="custom-select mr-3" id="source">
+			<option value="0" selected>Choose a source</option>
+			<option value="Nzherald.co.nz">NZ Herald</option>
+			<option value="Stuff.co.nz">Stuff</option>
+			<option value="google-news">Google News</option>
+			<option value="cnn">CNN</option>
+			<option value="the-verge">The Verge</option>
+			<option value="usa-today">USA Today</option>
+			<option value="fox-news">Fox News</option>
+			<option value="cbs-news">CBS News</option>
+			<option value="nbc-news">NBC News</option>
+		</select>
+
+		<select class="custom-select mr-3" id="category">
+			<option value="0" selected>Choose a categroy</option>
+			<option value="business">Business</option>
+			<option value="entertainment">Entertainment</option>
+			<option value="health">Health</option>
+			<option value="science">Science</option>
+			<option value="sports">Sports</option>
+			<option value="technology">Technology</option>
+		</select>
+
+		<button class="btn btn-info" id="submit">Display</button>
+		<button class="btn text-info" id="reset">Reset</button>
+	</div>
+	<div class="container mx-auto row" id="output"></div>
+	
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
