@@ -7,11 +7,15 @@
 	<title>News API</title>
 </head>
 <body>
-	<h1 class="jumbotron bg-primary text-light text-center display-3">News API</h1>
+	<div class="jumbotron text-center bg-primary">
+		<h1 class=" text-light text-center display-3">News API</h1>
+		<button class="btn btn-about" data-toggle="modal" data-target="#exampleModal">About this project</button>
+	</div>
+	
 
 	<div class="container d-flex mb-3">
 		<select class="custom-select mr-3" id="country">
-			<option value="0" selected>Choose a country</option>
+			<option value="0" selected>Country</option>
 			<option value="nz">New Zealand</option>
 			<option value="us">USA</option>
 			<option value="au">Australia</option>
@@ -21,10 +25,18 @@
 			<option value="fr">France</option>
 		</select>
 
+		<select class="custom-select mr-3" id="category">
+			<option value="0" selected>Category</option>
+			<option value="business">Business</option>
+			<option value="entertainment">Entertainment</option>
+			<option value="health">Health</option>
+			<option value="science">Science</option>
+			<option value="sports">Sports</option>
+			<option value="technology">Technology</option>
+		</select>
+
 		<select class="custom-select mr-3" id="source">
-			<option value="0" selected>Choose a source</option>
-			<option value="Nzherald.co.nz">NZ Herald</option>
-			<option value="Stuff.co.nz">Stuff</option>
+			<option value="0" selected>Source</option>
 			<option value="google-news">Google News</option>
 			<option value="cnn">CNN</option>
 			<option value="the-verge">The Verge</option>
@@ -34,20 +46,36 @@
 			<option value="nbc-news">NBC News</option>
 		</select>
 
-		<select class="custom-select mr-3" id="category">
-			<option value="0" selected>Choose a categroy</option>
-			<option value="business">Business</option>
-			<option value="entertainment">Entertainment</option>
-			<option value="health">Health</option>
-			<option value="science">Science</option>
-			<option value="sports">Sports</option>
-			<option value="technology">Technology</option>
-		</select>
+		<input type="text" class="form-control mr-3" id="search-term" placeholder="Search">
 
-		<button class="btn btn-info" id="submit">Display</button>
-		<button class="btn text-info" id="reset">Reset</button>
+		<button class="btn btn-primary" id="submit">Display</button>
+		<button class="btn text-primary" id="reset">Reset</button>
 	</div>
 	<div class="container mx-auto row" id="output"></div>
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalLabel">About this project</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<h5>Developer - Sean Reilly</h5>
+					<!-- <p>This is wrods</p> -->
+					<h5>Project</h5>
+					<p>This project is made using the open source API from newsapi.org. Some capabilities of the project are to be able to filter articles by country, source, category or by a keyword. There are many countries available to choose from and the search will be from whatever the user inputs.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
