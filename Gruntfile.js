@@ -6,37 +6,22 @@ module.exports = function(grunt) {
     watch: {
       all: {
         files: ['js/script.js', 'css/style.css', 'index.html'],
-        tasks: ['csslint','jshint','validation']
+        tasks: ['validation','csslint','jshint']
       }
     },
     jshint: {
-      all: ['Gruntfile.js', 'js/*.js']
+      all: ['Gruntfile.js', 'js/script.js']
     },
     validation: {
-      // options: {
-      //   reset: grunt.option('reset') || false,
-      //   stoponerror: false,
-      //   remotePath: 'http://decodize.com/',
-      //   remoteFiles: ['html/moving-from-wordpress-to-octopress/',
-      //                 'css/site-preloading-methods/'], //or
-      //   remoteFiles: 'validation-files.json', // JSON file contains array of page paths.
-      //   relaxerror: ['Bad value X-UA-Compatible for attribute http-equiv on element meta.'], //ignores these errors
-      // generateReport: false
-      //   errorHTMLRootDir: "w3cErrorFolder",
-      //   useTimeStamp: true,
-      //   errorTemplate: "w3c_validation_error_Template.html"
-      // },
+      options: {
+        reset: grunt.option('reset') || false,
+        stoponerror: false,
+      },
       files: {
-        src: ['index.html']
+        src: ['<%= yeoman.app %>/*.html']
       }
     },
     csslint: {
-      // strict: {
-      //   options: {
-      //     import: 2
-      //   },
-      //   src: ['path/to/**/*.css']
-      // },
       lax: {
         options: {
           import: false
@@ -49,19 +34,42 @@ module.exports = function(grunt) {
         src: "js/script.js",
         dest: "js/script.min.js"
       }
+    },
+    cssmin: {
+      options: {
+        mergeIntoShorthands: false,
+        roundingPrecision: -1
+      },
+      target: {
+        files: {
+          'css/style.min.css': ['css/style.css']
+        }
+      }
+    },
+    imagemin: {
+      static: {
+        options: {
+          optimizationLevel: 3,
+          svgoPlugins: [{removeViewBox: false}],
+        },
+        files: {
+          'images/News.min.jpg': 'images/News.jpg',
+        }
+      }
     }
   });
 
   // grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-w3c-html-validation');
+  grunt.loadNpmTasks('grunt-html-validation');
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
 
   // Default task(s).
-  grunt.registerTask('default', ['validation','jshint', 'csslint']);
-  grunt.registerTask('ugly', ['uglify']);
+  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('ugly', ['uglify', 'cssmin', 'imagemin']);
 
 };

@@ -63,7 +63,7 @@ $(document).ready(function(){
 		if (baseURL ===  'http://newsapi.org/v2/top-headlines?')baseURL += "country=nz&";
 		baseURL += "apiKey=f86d2f8d630843db90156d4555dab9cb";
 		print(baseURL);
-	};
+	}
 	// print function to display 
 	function print(url){
 		$.ajax({
@@ -71,6 +71,7 @@ $(document).ready(function(){
 			type: 'GET',
 			data: 'json',
 			success: function(data){
+				console.log(data.articles[0]);
 				document.getElementById("output").innerHTML = "";
 				for(var i = 0; i < data.articles.length; i++){
 					var card = "";
