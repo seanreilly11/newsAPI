@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         stoponerror: false,
       },
       files: {
-        src: ['<%= yeoman.app %>/*.html']
+        src: ['index.html']
       }
     },
     csslint: {

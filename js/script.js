@@ -44,6 +44,7 @@ $(document).ready(function(){
 		category = document.getElementById("category").value;
 		source = document.getElementById("source").value;
 		search = document.getElementById("search-term").value;
+		$("#no-results").hide();
 		buildURL();
 	});
 	// reset back to default display and reset options
@@ -51,6 +52,7 @@ $(document).ready(function(){
 		$('.custom-select').prop('selectedIndex',0);
 		$(".custom-select").attr("disabled", false);
 		document.getElementById("search-term").value = "";
+		$("#no-results").hide();
 		print("http://newsapi.org/v2/top-headlines?country=nz&apiKey=f86d2f8d630843db90156d4555dab9cb");
 	});
 	// create url based on what options are actually chosen
@@ -71,7 +73,8 @@ $(document).ready(function(){
 			type: 'GET',
 			data: 'json',
 			success: function(data){
-				console.log(data.articles[0]);
+				console.log(data);
+				if(data.articles.length === 0)$("#no-results").show();
 				document.getElementById("output").innerHTML = "";
 				for(var i = 0; i < data.articles.length; i++){
 					var card = "";
