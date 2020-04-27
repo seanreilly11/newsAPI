@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	var country, category, source, search;
+	var myKey = JSON.parse(apiKey);
 	//print default
 	buildURL();
 	// disable source if either select is used
@@ -53,7 +54,7 @@ $(document).ready(function(){
 		$(".custom-select").attr("disabled", false);
 		document.getElementById("search-term").value = "";
 		$("#no-results").hide();
-		print("http://newsapi.org/v2/top-headlines?country=nz&apiKey=f86d2f8d630843db90156d4555dab9cb");
+		print("http://newsapi.org/v2/top-headlines?country=nz&apiKey=" + myKey[0]);
 	});
 	// create url based on what options are actually chosen
 	function buildURL(){
@@ -63,7 +64,7 @@ $(document).ready(function(){
 		if(source != 0 && source != undefined)baseURL += "sources=" +source +"&";
 		if(search != "" && search != undefined)baseURL += "q=" +search +"&";
 		if (baseURL ===  'http://newsapi.org/v2/top-headlines?')baseURL += "country=nz&";
-		baseURL += "apiKey=f86d2f8d630843db90156d4555dab9cb";
+		baseURL += "apiKey=" + myKey[0];
 		print(baseURL);
 	}
 	// print function to display 
