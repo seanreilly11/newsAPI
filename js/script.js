@@ -86,7 +86,7 @@ $(document).ready(function () {
                     if (data.articles[i].urlToImage == null)
                         data.articles[i].urlToImage = "images/News.min.jpg";
                     card +=
-                        '<div class="card col-4"><img src="' +
+                        '<div class="card col-12 col-md-6 col-lg-4"><img src="' +
                         data.articles[i].urlToImage +
                         '" class="card-img-top">' +
                         '<div class="card-body"><h5 class="card-title">' +

@@ -9,11 +9,11 @@
 <body>
 	<div class="jumbotron text-center bg-primary mb-4">
 		<h1 class="text-light text-center display-3">News API</h1>
-		<button class="btn btn-about" data-toggle="modal" data-target="#exampleModal">About this project</button>
+		<button class="btn btn-about" data-toggle="modal" data-target="#aboutModal">About this project</button>
 	</div>
 	
-	<div class="container d-flex mb-4">
-		<select class="custom-select mr-3" id="country">
+	<div class="container row align-items-center mx-auto mb-4">
+		<select class="custom-select col-12 col-md-6 col-lg-2 mr-lg-3" id="country">
 			<option value="0" selected>Country</option>
 			<option value="nz">New Zealand</option>
 			<option value="us">USA</option>
@@ -24,7 +24,7 @@
 			<option value="fr">France</option>
 		</select>
 
-		<select class="custom-select mr-3" id="category">
+		<select class="custom-select col-12 col-md-6 col-lg-2 mr-lg-3" id="category">
 			<option value="0" selected>Category</option>
 			<option value="business">Business</option>
 			<option value="entertainment">Entertainment</option>
@@ -34,7 +34,7 @@
 			<option value="technology">Technology</option>
 		</select>
 
-		<select class="custom-select mr-3" id="source">
+		<select class="custom-select col-12 col-md-6 col-lg-2 mr-lg-3" id="source">
 			<option value="0" selected>Source</option>
 			<option value="google-news">Google News</option>
 			<option value="cnn">CNN</option>
@@ -45,10 +45,10 @@
 			<option value="nbc-news">NBC News</option>
 		</select>
 
-		<input type="text" class="form-control mr-3" id="search-term" placeholder="Search">
+		<input type="text" class="form-control col-12 col-md-6 col-lg-2 mr-lg-3" id="search-term" placeholder="Search">
 
-		<button class="btn btn-primary" id="submit">Display</button>
-		<button class="btn text-primary" id="reset">Reset</button>
+		<button class="btn btn-primary col col-md-6 col-lg" id="submit">Display</button>
+		<button class="btn text-primary col col-md-6 col-lg" id="reset">Reset</button>
 	</div>
 	<div class="container-fluid mx-auto row" id="output"></div>
 	<h4 class="text-center" id="no-results">There are no results for this search</h4>
@@ -58,11 +58,11 @@
 	</footer>
 
 	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalLabel">About this project</h4>
+					<h4 class="modal-title" id="aboutModalLabel">About this project</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
