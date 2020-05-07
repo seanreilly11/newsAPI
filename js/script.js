@@ -67,7 +67,7 @@ $(document).ready(function () {
         if (source != 0 && source != undefined)
             baseURL += "sources=" + source + "&";
         if (search != "" && search != undefined) baseURL += "q=" + search + "&";
-        if (baseURL === "http://newsapi.org/v2/top-headlines?")
+        if (baseURL === "https://newsapi.org/v2/top-headlines?")
             baseURL += "country=nz&";
         baseURL += "apiKey=f86d2f8d630843db90156d4555dab9cb";
         print(baseURL);
