@@ -51,7 +51,7 @@ $(document).ready(function () {
     $("#reset").click(function () {
         $(".custom-select").prop("selectedIndex", 0);
         $(".custom-select").attr("disabled", false);
-        document.getElementById("search-term").value = "";
+        $("#search-term").val("");
         $("#no-results").hide();
         print(
             "http://newsapi.org/v2/top-headlines?country=nz&apiKey=f86d2f8d630843db90156d4555dab9cb"
@@ -79,7 +79,6 @@ $(document).ready(function () {
             type: "GET",
             data: "json",
             success: function (data) {
-                console.log(data);
                 if (data.articles.length === 0) $("#no-results").show();
                 document.getElementById("output").innerHTML = "";
                 for (var i = 0; i < data.articles.length; i++) {
@@ -100,7 +99,7 @@ $(document).ready(function () {
                             "</p>";
                     }
                     card +=
-                        '<a class="card-text" target="_blank" href="' +
+                        '<a class="btn btn-outline-primary" target="_blank" href="' +
                         data.articles[i].url +
                         '">View story here</a></p>' +
                         "</div></div>";
