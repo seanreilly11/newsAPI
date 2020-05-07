@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var country, category, source, search;
-    //print default
+    //print default news
     buildURL();
     // disable source if either select is used
     if ($("#country").val() != "0" || $("#category").val() != "0") {
