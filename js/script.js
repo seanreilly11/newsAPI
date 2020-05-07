@@ -84,7 +84,7 @@ $(document).ready(function () {
                 for (var i = 0; i < data.articles.length; i++) {
                     var card = "";
                     if (data.articles[i].urlToImage == null)
-                        data.articles[i].urlToImage = "images/News.jpg";
+                        data.articles[i].urlToImage = "images/News.min.jpg";
                     card +=
                         '<div class="card col-4"><img src="' +
                         data.articles[i].urlToImage +
