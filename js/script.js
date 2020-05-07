@@ -54,12 +54,12 @@ $(document).ready(function () {
         $("#search-term").val("");
         $("#no-results").hide();
         print(
-            "http://newsapi.org/v2/top-headlines?country=nz&apiKey=f86d2f8d630843db90156d4555dab9cb"
+            "https://newsapi.org/v2/top-headlines?country=nz&apiKey=f86d2f8d630843db90156d4555dab9cb"
         );
     });
     // create url based on what options are actually chosen
     function buildURL() {
-        var baseURL = "http://newsapi.org/v2/top-headlines?";
+        var baseURL = "https://newsapi.org/v2/top-headlines?";
         if (country != 0 && country != undefined)
             baseURL += "country=" + country + "&";
         if (category != 0 && category != undefined)
